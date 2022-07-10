@@ -1,4 +1,5 @@
 // Programa em C++
+// Componente = vértices
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -16,8 +17,6 @@ void floydWarshall(vector<vector<int>> &graph, int N)
             for (int j = 0; j < N; j++)
             {
 
-                // Cuidando do inteiro
-                // transbordar
                 if (graph[i][k] != INT_MAX && graph[k][j] != INT_MAX)
                 {
 
@@ -34,10 +33,10 @@ void floydWarshall(vector<vector<int>> &graph, int N)
     }
 }
 
-// Abaixo a função dfs será usada para
-// obtém os componentes conectados de um
-// grafa e armazena todos os
-// nós no componente vetorial
+// Abaixo a função dfs(busca em profundidade) será usada para
+// obter os componentes conectados de um
+// grafo e armazenar todos os
+// nós no componente
 void dfs(int src, vector<bool> &visited, vector<vector<int>> &graph,
          vector<int> &component, int N)
 {
@@ -92,7 +91,7 @@ int maxComponente(vector<int> &component, vector<vector<int>> &graph)
 
 // A função abaixo usa os dois métodos dfs e floydWarshall
 // para obter as distâncias máximas mais curtas
-// em cada componente do gráfico o
+// em cada componente do gráfico a
 // função retorna um vetor, onde cada
 // elemento denota o caminho mais curto máximo
 // distância de um componente
@@ -115,7 +114,7 @@ vector<int> distanciaMaxCurta(vector<vector<int>> &graph, int N)
         if (!visited[i])
         {
 
-            // Antes de mais nada, limpe a temperatura
+            // Antes de mais nada, limpe o temp
             temp.clear();
             dfs(i, visited, graph, temp, N);
             components.push_back(temp);
@@ -146,7 +145,7 @@ int main()
     const int inf = INT_MAX;
 
     // Matriz de Adjacência para o primeiro
-    // gráfico nos exemplos
+    // grafo no exemplo
     vector<vector<int>> graph1 = {
         {0, inf, 9, inf, inf, inf, 3, inf},
         {inf, 0, inf, 10, 1, 8, inf, inf},
