@@ -1,7 +1,7 @@
 # ProjetoGrafos
  Disciplina de Grafos 2022.1
 
-Para o código implementado, foi utilizado o seguinte grafo a baixo:
+Para o código implementado, foi utilizado o seguinte grafo abaixo:
 
 <p align="center">
   <img src="https://github.com/anaestevam/ProjetoGrafos/blob/main/img/GRAFO.png">
