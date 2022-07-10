@@ -4,7 +4,7 @@
 Para o código implementado, foi utilizado o seguinte grafo a baixo:
 
 <p align="center">
-  <img src="https://github.com/anaestevam/ProjetoGrafos/img/GRAFO.png">
+  <img src="https://github.com/anaestevam/ProjetoGrafos/tree/main/img">
 </p>
 
 Na imagem, existem três componentes no grafo, que no código está apresentado através de uma Matriz de Adjacência, os componentes, chamaremos de A, B e C. 
