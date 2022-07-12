@@ -20,8 +20,7 @@ void floydWarshall(vector<vector<int>> &graph, int N)
                 if (graph[i][k] != INT_MAX && graph[k][j] != INT_MAX)
                 {
 
-                    // Atualiza a distância entre
-                    // vértice i e j se escolher
+                    // Atualiza a distância entre vértice i e j
                     // k como um vértice intermediário
                     // faz uma distância menor
                     if (graph[i][k] + graph[k][j] < graph[i][j])
@@ -35,8 +34,7 @@ void floydWarshall(vector<vector<int>> &graph, int N)
 
 // Abaixo a função dfs(busca em profundidade) será usada para
 // obter os componentes conectados de um
-// grafo e armazenar todos os
-// nós no componente
+// grafo e armazenar todos os nós no componente
 void dfs(int src, vector<bool> &visited, vector<vector<int>> &graph,
          vector<int> &component, int N)
 {
@@ -47,13 +45,13 @@ void dfs(int src, vector<bool> &visited, vector<vector<int>> &graph,
     // Coloca este nó no vetor componente
     component.push_back(src);
 
-    // Para todos os outros vértices no gráfico
+    // Para todos os outros vértices no grafo
     for (int dest = 0; dest < N; dest++)
     {
 
         // Se houver uma aresta entre
         // src e dest, ou seja, o valor
-        // do gráfico[u][v]!=INT_MAX
+        // do grafo[u][v]!=INT_MAX
         if (graph[src][dest] != INT_MAX)
         {
 
@@ -91,9 +89,9 @@ int maxComponente(vector<int> &component, vector<vector<int>> &graph)
 
 // A função abaixo usa os dois métodos dfs e floydWarshall
 // para obter as distâncias máximas mais curtas
-// em cada componente do gráfico a
+// em cada componente do grafo a
 // função retorna um vetor, onde cada
-// elemento denota o caminho mais curto máximo
+// elemento denota o caminho mais curto máxima
 // distância de um componente
 vector<int> distanciaMaxCurta(vector<vector<int>> &graph, int N)
 {
@@ -114,7 +112,7 @@ vector<int> distanciaMaxCurta(vector<vector<int>> &graph, int N)
         if (!visited[i])
         {
 
-            // Antes de mais nada, limpe o temp
+            //Limpe o temp
             temp.clear();
             dfs(i, visited, graph, temp, N);
             components.push_back(temp);
