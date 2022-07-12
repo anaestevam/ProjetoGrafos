@@ -145,7 +145,7 @@ int main()
     const int inf = INT_MAX;
 
     // Matriz de Adjacência para o primeiro
-    // grafo no exemplo
+    // grafo direcionado
     vector<vector<int>> graph1 = {
         {0, inf, 9, inf, inf, inf, 3, inf},
         {inf, 0, inf, 10, 1, 8, inf, inf},
@@ -156,14 +156,30 @@ int main()
         {3, inf, 11, inf, inf, inf, 0, inf},
         {inf, inf, inf, inf, inf, inf, inf, 0},
     };
+    // grafo não direcionado
+    vector<vector<int>> graph2 = {
+        {0, inf, 0, inf, inf, inf, 3, inf},
+        {inf, 0, inf, 0, 1, 8, inf, inf},
+        {9, inf, 0, inf, inf, inf, 11, inf},
+        {inf, 10, inf, 0, 5, 13, inf, inf},
+        {inf, 1, inf, 0, 0, 3, inf, inf},
+        {0, inf, inf, 0, 0, 0, inf, inf},
+        {0, inf, 0, inf, inf, inf, 0, inf},
+        {inf, inf, inf, inf, inf, inf, inf, 0},
+    };
 
     // Encontra as distâncias máximas mais curtas
     vector<int> result1 = distanciaMaxCurta(graph1, N);
+    vector<int> result2 = distanciaMaxCurta(graph2, N);
 
     // Imprimindo o caminho máximo mais curto
     // distâncias para cada componente
     for (int mx1 : result1)
         cout << mx1 << ' ';
+
+    return 0;
+    for (int mx2 : result2)
+        cout << mx2 << ' ';
 
     return 0;
 }
